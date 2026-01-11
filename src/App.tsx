@@ -93,6 +93,8 @@ function hello() {
   // ✅ PNG 저장 (흰 배경)
   const exportPng = async () => {
     const name = askFileName();
+    console.log(name);
+    console.log(previewRef.current);
     if (!name) return;
     if (!previewRef.current) return;
     await exportAsPng(previewRef.current!, name);

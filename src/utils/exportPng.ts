@@ -8,12 +8,15 @@ export async function exportAsPng(
     ".markdown-preview"
   ) as NodeListOf<HTMLElement>;
 
+  console.log(console.log(document.querySelectorAll(".markdown-preview")));
+  console.log(pages.length);
   if (!pages.length) return;
 
   for (let i = 0; i < pages.length; i++) {
     const canvas = await html2canvas(pages[i], {
       backgroundColor: "#ffffff",
       scale: 2,
+      useCORS: true,
     });
 
     const dataUrl = canvas.toDataURL("image/png");

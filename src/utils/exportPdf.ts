@@ -1,5 +1,5 @@
 import jsPDF from "jspdf";
-import * as htmlToImage from "html-to-image";
+import html2canvas from "html2canvas";
 
 export async function exportAsPdf(
   container: HTMLElement,
@@ -13,9 +13,10 @@ export async function exportAsPdf(
   for (let i = 0; i < pages.length; i++) {
     const pageEl = pages[i] as HTMLElement;
 
-    const canvas = await htmlToImage.toCanvas(pageEl, {
+    const canvas = await html2canvas(pageEl, {
       backgroundColor: "#ffffff",
-      pixelRatio: 2, // 인쇄 선명도
+      scale: 2,
+      useCORS: true,
     });
 
     const imgData = canvas.toDataURL("image/png");

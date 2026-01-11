@@ -106,7 +106,7 @@ const MarkdownPreview = forwardRef<HTMLDivElement, Props>(function MarkdownPrevi
         className="flex justify-center py-10 bg-white markdown-preview"
       >
         <div
-          className="bg-white shadow-md"
+          className="bg-white shadow-md markdown-preview"
           style={{ width: size.w, padding: margin }}
         >
           <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>{text}</ReactMarkdown>
